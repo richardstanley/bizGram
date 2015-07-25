@@ -29,7 +29,8 @@ var app = angular.module('bizGramApp', [
 	'mapCtrl',
 	'EditCtrl',
 	'connectIntuitAngular',
-	'ngImgur'
+	'ngImgur',
+	'famous.angular'
 	]);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
