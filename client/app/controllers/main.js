@@ -1,6 +1,6 @@
 angular.module('mainCtrl', [])
 
-.controller('mainController', function (Rooms, Users, DirectMessage, Visualization, $rootScope, $stateParams) {
+.controller('mainController', function (Rooms, Users, DirectMessage, Visualization, $rootScope, $stateParams, $http) {
 
 	var vm = this;
   console.log('main', $stateParams);
@@ -14,6 +14,20 @@ angular.module('mainCtrl', [])
   vm.rooms = Rooms.getRooms(vm.org);
   // Get all users except for the current user from the userFactory.
   vm.users = Users.getDisplayUsers(vm.currentUser.username, vm.org);
+
+  $http({
+     method: 'POST', 
+     url: '/organization', 
+     data: $.param({ org: vm.org}), 
+     headers: {'Content-Type' : 'application/x-www-form-urlencoded'}
+  });
+  // $http.post('/organization', {"org": "hello"})
+  //   .success(function(data, status, headers, config) {
+  //     console.log("successfully added org");
+  //   })
+  //   .error(function(data, status, headers, config) {
+  //     console.log("failed to add org");
+  //   });
 
   // Send new room to the roomFactory.
   vm.addRoom = function(e) {
