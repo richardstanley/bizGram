@@ -1,7 +1,7 @@
 // Angular controller for room.html
-angular.module('roomCtrl', [])
+angular.module('roomCtrl', ['famous.angular'])
 
-.controller('roomController', function (Rooms, $rootScope,$stateParams) {
+.controller('roomController', function (Rooms, $rootScope, $stateParams) {
   var vm = this;
   // Passes the roomName from the main view.
   vm.roomname = $stateParams.roomName;
@@ -21,6 +21,7 @@ angular.module('roomCtrl', [])
       vm.text = '';
     }
   };
+    
 });
 
 

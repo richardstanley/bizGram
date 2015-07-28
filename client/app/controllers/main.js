@@ -15,12 +15,12 @@ angular.module('mainCtrl', [])
   // Get all users except for the current user from the userFactory.
   vm.users = Users.getDisplayUsers(vm.currentUser.username, vm.org);
 
-  $http({
-     method: 'POST', 
-     url: '/organization', 
-     data: $.param({ org: vm.org}), 
-     headers: {'Content-Type' : 'application/x-www-form-urlencoded'}
-  });
+  // $http({
+  //    method: 'POST', 
+  //    url: '/organization', 
+  //    data: $.param({ org: vm.org}), 
+  //    headers: {'Content-Type' : 'application/x-www-form-urlencoded'}
+  // });
   // $http.post('/organization', {"org": "hello"})
   //   .success(function(data, status, headers, config) {
   //     console.log("successfully added org");

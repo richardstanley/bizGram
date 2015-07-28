@@ -30,7 +30,8 @@ var app = angular.module('bizGramApp', [
 	'EditCtrl',
 	'connectIntuitAngular',
 	'ngImgur',
-	'famous.angular'
+	'famous.angular',
+	'famousCtrl'
 	]);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
